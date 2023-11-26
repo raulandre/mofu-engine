@@ -29,12 +29,12 @@ public class DemoComponent : Component
     {
         _mousePos = Raylib.GetMousePosition();
 
-        if (Raylib.IsKeyPressed(KeyboardKey.KEY_F1))
+        if (Raylib.IsKeyPressed(KeyboardKey.KEY_F2))
         {
             SceneManager.LoadSceneByIndex(1);
         }
         
-        if (Raylib.IsKeyPressed(KeyboardKey.KEY_F2))
+        if (Raylib.IsKeyPressed(KeyboardKey.KEY_F1))
         {
             SceneManager.LoadSceneByIndex(0);
         }
