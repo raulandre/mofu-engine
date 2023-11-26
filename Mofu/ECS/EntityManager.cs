@@ -18,6 +18,7 @@ public static class EntityManager
         _entities.Clear();
         scene.LoadResources();
         scene.Construct();
+        Initialize();
     }
 
     public static void Initialize()
