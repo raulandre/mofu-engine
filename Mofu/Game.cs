@@ -5,12 +5,12 @@ namespace Mofu;
 
 public static class Game
 {
-    public static Window? Window { get; private set; } = null;
+    private static Window? _window;
 
     // TODO: create config class instead of passing individual params
     public static void Configure(int width, int height, string title)
     {
-        Window = new Window(width, height, title);
+        _window = new Window(width, height, title);
     }
 
     public static int Run()
@@ -18,16 +18,16 @@ public static class Game
         if (!SceneManager.Initialized)
             throw new Exception("Please initialize SceneManager by loading scenes from the appropriate assembly. SceneManager found no scenes to run.");
         
-        Window?.Present();
+        _window?.Present();
         
         EntityManager.HookScene(SceneManager.CurrentScene!);
         EntityManager.Initialize();
         
-        while (Window?.IsRunning() ?? false)
+        while (_window?.IsRunning() ?? false)
         {
             EntityManager.Update();
             
-            Window?.Draw();
+            _window?.Draw();
         }
         
         return 0;

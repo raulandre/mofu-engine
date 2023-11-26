@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using Mofu.ECS;
+using Mofu.Scene;
 using Raylib_cs;
 
 namespace GameDemo;
@@ -27,11 +28,21 @@ public class DemoComponent : Component
     public override void Update()
     {
         _mousePos = Raylib.GetMousePosition();
+
+        if (Raylib.IsKeyPressed(KeyboardKey.KEY_F1))
+        {
+            SceneManager.LoadSceneByIndex(1);
+        }
+        
+        if (Raylib.IsKeyPressed(KeyboardKey.KEY_F2))
+        {
+            SceneManager.LoadSceneByIndex(0);
+        }
     }
 
     public override void Draw2D()
     {
-        Raylib.DrawFPS(_x, _y);
         Raylib.DrawCircle((int)_mousePos.X, (int)_mousePos.Y, _radius, _color);
+        Raylib.DrawFPS(_x, _y);
     }
 }

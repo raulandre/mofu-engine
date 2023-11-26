@@ -1,4 +1,5 @@
 ﻿using Mofu.Scene;
+using Mofu.Scenes;
 
 namespace Mofu.Tests.Fixtures;
 

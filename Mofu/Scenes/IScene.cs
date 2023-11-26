@@ -1,4 +1,4 @@
-﻿namespace Mofu.Scene;
+﻿namespace Mofu.Scenes;
 
 public interface IScene
 {

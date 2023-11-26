@@ -1,10 +1,11 @@
 ﻿using Mofu.Scene;
+using Mofu.Scenes;
 
 namespace Mofu.ECS;
 
 public static class EntityManager
 {
-    private static List<Entity> _entities = new();
+    private static readonly List<Entity> _entities = new();
     public static IReadOnlyCollection<Entity> Entities => _entities;
 
     public static void Register(Entity entity)
@@ -27,6 +28,12 @@ public static class EntityManager
 
     public static void Update()
     {
+        if (SceneManager.HasScheduledSceneChange)
+        {
+            HookScene(SceneManager.NextScene!);
+            SceneManager.NotifySceneChangeComplete();
+        }
+        
         foreach (var entity in _entities)
             entity.Update();
     }
