@@ -33,26 +33,3 @@ public static class Game
         return 0;
     }
 }
-
-internal class FpsCounter : Component
-{
-    private readonly int _x;
-    private readonly int _y;
-
-    public FpsCounter(Entity owner, int x, int y) : base(owner)
-    {
-        _x = x;
-        _y = y;
-    }
-
-    public override void Initialize()
-    { }
-
-    public override void Update()
-    { }
-
-    public override void Draw2D()
-    {
-        R.DrawFPS(_x, _y);
-    }
-}
