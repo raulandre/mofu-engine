@@ -1,5 +1,4 @@
-﻿using Mofu.Assets;
-using Mofu.ECS;
+﻿using Mofu.ECS;
 using Mofu.Scenes;
 using Raylib_cs;
 
