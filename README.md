@@ -2,7 +2,7 @@
 ![build](https://github.com/raulandre/mofu-engine/actions/workflows/dotnet.yml/badge.svg)     
 Simple game engine library written in C# using Raylib-cs
 ## Basic functionality
-```
+```csharp
 // Specify basic window creation params
 Game.Configure(1366, 768, "Nimotsu");
 
@@ -13,7 +13,7 @@ SceneManager.LoadScenesFromAssembly(Assembly.GetExecutingAssembly());
 return Game.Run(); 
 ```
 Mofu will automatically load scenes (through the IScene interface) and get them ready to run:
-```
+```csharp
 public class Scene : IScene
 {
     // Specify scene index
